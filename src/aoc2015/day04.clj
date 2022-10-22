@@ -24,7 +24,7 @@
           :else (recur (inc i)))))
 ; 282749
 
-;part 1
+;part 2
 
 (loop [i 0]
   (let [[d1 d2 d3] (take 3 (md5 (str "yzbqklnj" i)))]
