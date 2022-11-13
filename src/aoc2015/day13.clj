@@ -10,7 +10,7 @@
 (defn update-vals
   "Calls f on every value of the given map in order to replace that value."
   [f m]
-  (reduce-kv #(assoc %1 %2 (f %3)) {} m))
+  (persistent! (reduce-kv #(assoc! %1 %2 (f %3)) (transient {}) m)))
 
 (defn read-data
   "Input: lines like \"Alice would gain 54 happiness units by sitting next to Bob.\"
